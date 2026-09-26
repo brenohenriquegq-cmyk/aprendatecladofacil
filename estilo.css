@@ -26,3 +26,15 @@ p, li { color: var(--texto); }
 a { color: var(--azul); }
 .botao { display: inline-block; background: #ef4444; color: #fff; text-decoration: none; font-weight: 800; padding: 12px 26px; border-radius: 999px; margin-top: 8px; }
 footer { margin-top: 48px; font-size: 0.9rem; color: var(--suave); }
+
+/* Impressão e PDF: fundo branco e texto escuro, para o documento de
+   evidência da auditoria ficar legível. */
+@media print {
+  body { background: #fff; color: #111; }
+  p, li, .suave, footer { color: #222; }
+  h1, h2 { color: #0b1220; text-shadow: none; }
+  .cartao { background: #f4f6fa; border-color: #d6dbe4; }
+  a { color: #0369a1; }
+  .botao { color: #fff; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .faixa { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+}
