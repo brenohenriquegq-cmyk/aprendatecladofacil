@@ -1,0 +1,16 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<title>Autorizando...</title>
+</head>
+<body>
+<p>Autorizando, aguarde um instante...</p>
+<script>
+  // O TikTok não aceita "localhost" como redirect_uri, então essa página
+  // (num domínio https de verdade) recebe o retorno e repassa pro servidor
+  // local do pipeline, que é quem realmente processa o code/state.
+  window.location.replace("http://localhost:53684/tiktok/callback" + window.location.search);
+</script>
+</body>
+</html>
